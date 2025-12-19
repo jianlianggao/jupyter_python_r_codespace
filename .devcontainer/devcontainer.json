@@ -1,0 +1,19 @@
+{
+  "name": "Python + R Jupyter Codespace",
+  "image": "quay.io/jupyter/datascience-notebook:python-3.11.8",
+  "remoteUser": "jovyan",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "REditorSupport.r",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+
+  // IRkernel is already installed in datascience-notebook; this ensures kernelspec is registered system-wide
+  "postCreateCommand": "R -e \"IRkernel::installspec(user = FALSE)\""
+}
